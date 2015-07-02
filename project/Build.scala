@@ -16,6 +16,6 @@ object Settings {
   val testSettings = Seq(libraryDependencies += "org.scalatest" %% "scalatest" % "2.2.4" % "test")
 
   val playSettings = Seq(libraryDependencies ++= Seq(
-    "com.typesafe.play" %% "play" % play.core.PlayVersion.current,
+    "com.typesafe.play" %% "play-server" % play.core.PlayVersion.current,
     "com.typesafe.play" %% "play-test" % play.core.PlayVersion.current % "test"))
 }
