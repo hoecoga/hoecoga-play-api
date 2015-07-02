@@ -10,14 +10,14 @@ trait BodyParserMixin extends Controller {
   private[this] val maxLength = parse.DefaultMaxTextLength
 
   /**
-   * @see [[https://github.com/playframework/playframework/blob/2.4.x/framework/src/play/src/main/scala/play/api/mvc/ContentTypes.scala#L728]]
+   * @see [[https://github.com/playframework/playframework/blob/2.4.1/framework/src/play/src/main/scala/play/api/mvc/ContentTypes.scala#L728]]
    */
   private[this] def createBadResult(msg: String, statusCode: Int = BAD_REQUEST): RequestHeader => Future[Result] = { request =>
     LazyHttpErrorHandler.onClientError(request, statusCode, msg)
   }
 
   /**
-   * @see [[https://github.com/playframework/playframework/blob/2.4.x/framework/src/play/src/main/scala/play/api/mvc/ContentTypes.scala#L736]]
+   * @see [[https://github.com/playframework/playframework/blob/2.4.1/framework/src/play/src/main/scala/play/api/mvc/ContentTypes.scala#L736]]
    */
   private[this] def checkForEof[A](request: RequestHeader): A => Iteratee[Array[Byte], Either[Result, A]] = { eofValue: A =>
     import Execution.Implicits.trampoline
